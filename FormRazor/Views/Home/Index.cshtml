@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    IEnumerable<string> strList = new List<string> { "POO", "TW", "MAT3", "FIS1" };
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">HELPERS</h1>
+
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2">
+                @Html.Label("lblNombre","Nombre Usuario: ")
+            </div>
+            <div class="col-sm-10">
+                @Html.TextBox("txtNombre")
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-2">
+                @Html.Label("lblPassword","Password: ")
+            </div>
+            <div class="col-sm-10">
+                @Html.Password("pswPassword")
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-2">
+                @Html.Label("lblGenero","Genero: ")
+            </div>
+            <div class="col-sm-10">
+                @Html.RadioButton("Genero", "Masculino", true, new{id="masculino"})
+                Masculino
+                @Html.RadioButton("Genero", "Femenino", false, new{id="femenino"})
+                Femenino
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-2">
+                @Html.Label("lblDireccion","Direccion: ")
+            </div>
+            <div class="col-sm-10">
+                @Html.TextArea("txtaDireccion")
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-2">
+                @Html.Label("lblPasatiempos","Pasatiempos: ")
+            </div>
+            <div class="col-sm-10">
+                @Html.CheckBox("chbBailar") Bailar
+                @Html.CheckBox("chbEscalar") Escalar
+                @Html.CheckBox("chbCorrer") Correr
+                @Html.CheckBox("chbPeliculas") Peliculas
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-2">
+                @Html.Label("lblCurso","Curso: ")
+            </div>
+            <div class="col-sm-10">
+                @Html.DropDownList("ddlCurso", new SelectList(strList,
+                strList.FirstOrDefault()), "--Seleccionar curso ----" )
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-2">
+                @Html.Label("lblConocimientos","Conocimientos: ")
+            </div>
+            <div class="col-sm-10">
+                @Html.ListBox("Seleccionar habilidades", new List<SelectListItem>{
+                new SelectListItem {Text = "C #", Value = "1"},new SelectListItem {Text = "ASP.NET", Value = "2"},
+                new SelectListItem {Text = "ASP.NET Core", Value = "3"},
+                new SelectListItem {Text = "Azure", Value = "4"}
+                })
+            </div>
+        </div>
+
+        <hr />
+        @Html.ActionLink("Enviar Datos", "", "control", null, new { @class = "btn btn-info" })
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
